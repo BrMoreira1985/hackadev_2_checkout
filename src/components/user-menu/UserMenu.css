@@ -1,0 +1,23 @@
+.user_menu_container {
+  width: 200px;
+  height: 50px;
+  background-color: grey;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.userButton {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.userButton:hover {
+  cursor: pointer;
+}
