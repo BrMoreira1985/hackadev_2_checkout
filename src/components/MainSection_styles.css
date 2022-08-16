@@ -1,0 +1,42 @@
+.main_section {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-shrink: 0;
+  flex-direction: row;
+  justify-content: center;
+  padding-top: 10px;
+}
+
+.containerLeft {
+  flex-basis: 60%;
+  display: flex;
+  flex-direction: column;
+  padding-right: 2.5px;
+}
+
+.containerRight {
+  flex-basis: 38%;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  padding-left: 2.5px;
+}
+
+.productBag {
+  display: flex;
+  overflow: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.productBag::-webkit-scrollbar {
+  display: none;
+}
+
+@media only screen and (max-width: 899px) {
+  .main_section {
+    flex-direction: column;
+    transform: translate(0, -30px);
+  }
+}

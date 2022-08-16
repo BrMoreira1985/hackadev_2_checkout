@@ -9,7 +9,7 @@ const Searchbar = () => {
         className="search"
         placeholder="O que você procura?"
       />
-      <button className="search_button">
+      <button className="search_button" title="Buscar">
         <FaSearch />
       </button>
     </div>

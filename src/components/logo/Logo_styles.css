@@ -1,6 +1,19 @@
 .logo {
   width: 100px;
-  height: 100px;
-  background-color: white;
-  color: black;
+  display: flex;
+  justify-content: center;
+}
+
+.logo:hover {
+  cursor: pointer;
+}
+
+.logo img {
+  width: 64px;
+}
+
+@media only screen and (max-width: 899px) {
+  .logo img {
+    width: 32px;
+  }
 }

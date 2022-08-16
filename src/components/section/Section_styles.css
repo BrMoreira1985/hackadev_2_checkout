@@ -1,0 +1,28 @@
+:root {
+  --shadow: #fdded8;
+}
+
+.sectionCard {
+  height: fit-content;
+  padding: 10px;
+  box-shadow: 0 2px 5px var(--shadow);
+  text-align: left;
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 5px;
+  letter-spacing: 0.1rem;
+}
+
+.sectionCard h1 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 5px 0;
+}
+
+.sectionCard p {
+  margin: 0px;
+}
+
+.subtotal {
+  text-align: right;
+}

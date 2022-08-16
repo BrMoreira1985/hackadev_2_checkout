@@ -1,0 +1,43 @@
+:root {
+  --azul_marinho: #1b2c58;
+}
+
+.product {
+  display: block;
+  text-align: center;
+  width: 128px;
+  height: 230px;
+  overflow: hidden;
+  margin-right: 5px;
+  margin-bottom: 10px;
+}
+
+.product img {
+  width: 128px;
+  margin: 0;
+}
+
+.quantity {
+  z-index: 3;
+  transform: translate(90px, -195px);
+  width: 40px;
+  height: 25px;
+  border-radius: 5px;
+  background-color: var(--azul_marinho);
+  color: white;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0;
+}
+
+.priceOriginal {
+  margin: 0;
+  transform: translate(0, -25px);
+}
+
+.price {
+  margin: 0;
+  transform: translate(0, -25px);
+}
