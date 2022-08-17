@@ -3,14 +3,46 @@
 :root {
   --azul_piscina: #478f98;
   --azul_marinho: #1b2c58;
+  --azul_transparente: #478f988c;
   --branco_amarelado: #fffcf7;
+}
+
+* {
+  transition: all 0.2s ease-in-out;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 0.1rem;
+}
+
+::selection {
+  background: var(--azul_piscina);
+  color: white;
 }
 
 body {
   margin: 0;
-  font-family: "Poppins", sans-serif;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--branco_amarelado);
   color: var(--azul_marinho);
+}
+
+input[type="radio"] {
+  appearance: none;
+}
+
+input[type="radio"]:after {
+  content: "";
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 1px solid var(--azul_transparente);
+}
+
+input[type="radio"]:checked {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--azul_marinho);
 }

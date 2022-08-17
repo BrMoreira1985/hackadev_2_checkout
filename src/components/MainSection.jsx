@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./MainSection_styles.css";
 import Section from "./section/Section";
 import Product from "./product/Product";
@@ -9,7 +10,25 @@ import IconPg2 from "../images/pix-icon.png";
 import IconPg3 from "../images/card-icon.png";
 import IconPg4 from "../images/mercadopago-icon.png";
 import OptionField from "./option-field/OptionField";
+import Summary from "./summary/Summary";
+import Cupon from "./cupon/Cupon";
+import CheckoutButton from "./checout-button/CheckoutButton";
 import CreditCardOptions from "./credit-card-options/CrediCardOptions";
+
+function CuponFunction() {
+  const [discount, setDiscount] = useState("");
+
+  const handleDiscount = (event) => {
+    setDiscount(event.target.value);
+  };
+
+  return (
+    <Section
+      name="APLICAR CUPOM"
+      content={<Cupon {...{ handleDiscount, discount }} />}
+    />
+  );
+}
 
 const MainSection = () => {
   return (
@@ -36,25 +55,27 @@ const MainSection = () => {
                   image={ImgProduct1}
                   alt="biquini animal print"
                   quantity="x 1"
-                  priceOriginal="R$ 89,90"
-                  price="R$ 71,92"
+                  priceOriginal={`R$ ${(89.9).toFixed(2)}`}
+                  price={`R$ ${(71.92).toFixed(2)}`}
                 />
 
                 <Product
                   image={ImgProduct2}
                   alt="vestido Lisa"
                   quantity="x 1"
-                  price="R$ 85,00"
+                  price={`R$ ${(85).toFixed(2)}`}
                 />
 
                 <Product
                   image={ImgProduct3}
                   alt="Maiô Tiras"
                   quantity="x 1"
-                  price="R$ 100,00"
+                  price={`R$ ${(100).toFixed(2)}`}
                 />
               </div>
-              <p className="subtotal">Subtotal: R$ 256,92</p>
+              <p className="subtotal">
+                Subtotal: {`R$ ${(256.92).toFixed(2)}`}
+              </p>
             </>
           }
         />
@@ -66,12 +87,12 @@ const MainSection = () => {
               <OptionField
                 name="Frete"
                 text="Sedex - Até 2 dias úteis"
-                description="+R$ 50,00"
+                description={`+R$ ${(50).toFixed(2)}`}
               />
               <OptionField
                 name="Frete"
                 text="PAC - Até 6 dias úteis"
-                description="+R$ 20,00"
+                description={`+R$ ${(20).toFixed(2)}`}
               />
 
               <OptionField
@@ -122,11 +143,18 @@ const MainSection = () => {
       </div>
 
       <div className="containerRight">
-        <Section name="APLICAR CUPOM" />
+        <CuponFunction />
 
-        <Section name="RESUMO" />
+        <Section
+          name="RESUMO"
+          content={
+            <>
+              <Summary />
+            </>
+          }
+        />
 
-        <Section name="FINALIZAR COMPRA" />
+        <Section name="FINALIZAR" content={<CheckoutButton />} />
       </div>
     </section>
   );

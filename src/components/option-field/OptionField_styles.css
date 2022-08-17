@@ -13,6 +13,10 @@
   margin-bottom: 5px;
 }
 
+.clickable:hover {
+  cursor: pointer;
+}
+
 .clickable :nth-child(1) {
   transform: translate(0, 3px);
 }

@@ -1,0 +1,51 @@
+:root {
+  --azul_piscina: #478f98;
+  --azul_marinho: #1b2c58;
+  --azul_piscina_transparente: #478f981d;
+}
+
+.cupon {
+  margin: 15px 0 15px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+}
+
+.line1 {
+  height: 40px;
+}
+
+.line2 {
+  transform: translate(0, 15px);
+  height: 20%;
+  vertical-align: center;
+}
+
+.input {
+  border-radius: 5px 0 0 5px;
+  height: 100%;
+  border: none;
+  padding-left: 15px;
+  background-color: var(--azul_piscina_transparente);
+}
+
+.input:focus {
+  outline: none;
+}
+
+.apply {
+  border-radius: 0 5px 5px 0;
+  border: none;
+  height: 100%;
+  background-color: var(--azul_marinho);
+  color: white;
+  padding-right: 10px;
+}
+
+.apply:hover {
+  border-radius: 0 10px 10px 0;
+  background-color: var(--azul_piscina);
+  cursor: pointer;
+}

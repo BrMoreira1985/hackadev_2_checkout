@@ -1,0 +1,12 @@
+.line {
+  display: flex;
+}
+
+.entry {
+  width: 50%;
+}
+
+.value {
+  width: 50%;
+  text-align: right;
+}

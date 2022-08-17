@@ -1,5 +1,6 @@
 :root {
   --azul_marinho: #1b2c58;
+  --laranja: #ff4d2f;
 }
 
 .product {
@@ -35,6 +36,8 @@
 .priceOriginal {
   margin: 0;
   transform: translate(0, -25px);
+  text-decoration: line-through;
+  color: var(--laranja);
 }
 
 .price {

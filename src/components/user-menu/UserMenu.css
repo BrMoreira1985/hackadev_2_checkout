@@ -1,3 +1,9 @@
+:root {
+  --azul_piscina: #478f98;
+  --azul_marinho: #1b2c58;
+  --azul_piscina_transparente: #478f981d;
+}
+
 .user_menu_container {
   width: 150px;
   height: 50px;
@@ -15,10 +21,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.1s ease-in-out;
+  color: var(--azul_marinho);
 }
 
 .userButton:hover {
+  color: var(--azul_piscina);
   cursor: pointer;
   font-size: 1.5rem;
 }
