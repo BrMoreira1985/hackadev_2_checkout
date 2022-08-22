@@ -1,9 +1,9 @@
-import "./App.css";
+import "./Checkout_styles.css";
 import Navbar from "./components/Navbar";
 import MainSection from "./components/MainSection";
 import Footer from "./components/Footer";
 
-function App() {
+function Checkout() {
   return (
     <div className="App">
       <header className="App-header">
@@ -19,4 +19,4 @@ function App() {
   );
 }
 
-export default App;
+export default Checkout;

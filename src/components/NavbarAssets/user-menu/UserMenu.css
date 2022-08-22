@@ -2,6 +2,7 @@
   --azul_piscina: #478f98;
   --azul_marinho: #1b2c58;
   --azul_piscina_transparente: #478f981d;
+  --navbar: #e8ebea;
 }
 
 .user_menu_container {
@@ -21,11 +22,29 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--azul_marinho);
+  color: white;
+  background-color: var(--azul_marinho);
 }
 
 .userButton:hover {
-  color: var(--azul_piscina);
+  background-color: var(--azul_piscina);
   cursor: pointer;
   font-size: 1.5rem;
+}
+
+.hiddenButton {
+  display: none;
+}
+
+@media only screen and (max-width: 500px) {
+  .user_menu_container {
+    justify-content: center;
+  }
+  .userButton {
+    display: none;
+  }
+
+  .hiddenButton {
+    display: flex;
+  }
 }

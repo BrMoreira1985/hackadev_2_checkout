@@ -1,12 +1,8 @@
-:root {
-  --azul_piscina: #478f98;
-  --azul_marinho: #1b2c58;
-}
-
 .navbar-container {
   position: fixed;
-  background-color: var(--azul_piscina);
+  background-color: var(--navbar);
   display: flex;
+  align-items: center;
   justify-content: center;
   width: 100%;
   height: 120px;
@@ -14,7 +10,8 @@
 }
 
 .navbar {
-  width: 80vw;
+  width: 80%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -23,6 +20,18 @@
 
 @media only screen and (max-width: 899px) {
   .navbar-container {
+    height: 100px;
+    top: 0;
+  }
+
+  .navbar {
+    width: 95%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .navbar-container {
+    flex-direction: column;
     height: 100px;
     top: 0;
   }

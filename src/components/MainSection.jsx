@@ -13,8 +13,7 @@ import IconPg4 from "../images/mercadopago-icon.png";
 import OptionField from "./option-field/OptionField";
 import Summary from "./summary/Summary";
 import Cupon from "./cupon/Cupon";
-import AddressButton from "./address-button/AdressButton";
-import CheckoutButton from "./checout-button/CheckoutButton";
+import ChangeAddress from "./change-address/ChangeAddress";
 import CreditCardOptions from "./credit-card-options/CrediCardOptions";
 import CheckoutModal from "./modal/Modal";
 
@@ -79,7 +78,10 @@ const MainSection = () => {
                   </>
                 );
               })}
-              <AddressButton />
+              <ChangeAddress
+                openButtonText={"ALTERAR ENDEREÇO"}
+                closeButtonText={"CONCLUÍDO"}
+              />
             </>
           }
         />
@@ -133,7 +135,7 @@ const MainSection = () => {
                 text="Cartão de crédito"
               />
 
-              <CreditCardOptions />
+              {/*<CreditCardOptions />*/}
 
               <OptionField
                 hasIcon={true}
@@ -153,7 +155,15 @@ const MainSection = () => {
           name="RESUMO"
           content={
             <>
-              <Summary />
+              <Summary
+                subtotal={"R$ 256,92"}
+                frete={"R$ 50,00"}
+                desconto={"R$ 17,98"}
+                total={"R$ 288,94"}
+                prazo={"Até 2 dias úteis"}
+                formaPagamento={"Pix"}
+                parcelas={"À vista"}
+              />
             </>
           }
         />

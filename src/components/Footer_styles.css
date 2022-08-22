@@ -1,5 +1,5 @@
 .mainfooter {
   width: 100%;
-  background-color: blue;
+  background-color: var(--navbar);
   height: 300px;
 }

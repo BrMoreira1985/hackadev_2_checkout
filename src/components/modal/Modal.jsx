@@ -30,8 +30,10 @@ const CheckoutModal = ({
         overlayClassName="modal-overlay"
         className="modal-content"
       >
-        <h1>{modalTitle}</h1>
-        <div className="info"></div>
+        <h1 className="title">{modalTitle}</h1>
+        <div className="info">
+          <FaRegCheckCircle />
+        </div>
         <button className="modal-closer" onClick={closeModal}>
           {closeButtonText}
         </button>

@@ -17,7 +17,7 @@ const Summary = ({
       <KeyValuePair entry="Desconto" value={desconto} />
       <KeyValuePair entry="Total" value={total} />
       <KeyValuePair entry="Prazo" value={prazo} />
-      <KeyValuePair entry="FormaPagamento" value={formaPagamento} />
+      <KeyValuePair entry="Forma de Pagamento" value={formaPagamento} />
       <KeyValuePair entry="Parcelas" value={parcelas} />
     </div>
   );
