@@ -1,6 +1,8 @@
 :root {
   --azul_piscina: #478f98;
   --azul_marinho: #1b2c58;
+  --azul_transparente: #478f988c;
+  --branco_amarelado: #fffcf7;
 }
 
 .App {
@@ -21,7 +23,7 @@
 
 .App-section {
   width: 80%;
-  min-width: 900px;
+  max-width: 1500px;
   flex-shrink: 1;
   display: flex;
 }
@@ -35,5 +37,11 @@
   .App-section {
     width: 100%;
     min-width: 200px;
+  }
+}
+
+@media only screen and (max-width: 380px) {
+  * {
+    font-size: calc(18px + (26 - 16) * ((100vw - 768px) / (1600 - 768)));
   }
 }

@@ -1,5 +1,5 @@
 import "./Logo_styles.css";
-import Logotipo from "./Logo_branco.png";
+import Logotipo from "./Ocean_logo.png";
 
 const Logo = () => {
   return (

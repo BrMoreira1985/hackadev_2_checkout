@@ -15,7 +15,7 @@ const Cupon = ({ handleDiscount, discount }) => {
       </div>
 
       <div className="line2">
-        <p>valor do cumpom</p>
+        <p>{discount}</p>
       </div>
     </div>
   );

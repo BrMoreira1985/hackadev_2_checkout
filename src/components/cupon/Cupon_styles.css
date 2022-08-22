@@ -15,6 +15,9 @@
 
 .line1 {
   height: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .line2 {
@@ -26,6 +29,7 @@
 .input {
   border-radius: 5px 0 0 5px;
   height: 100%;
+  width: 60%;
   border: none;
   padding-left: 15px;
   background-color: var(--azul_piscina_transparente);
@@ -42,6 +46,7 @@
   background-color: var(--azul_marinho);
   color: white;
   padding-right: 10px;
+  font-size: 1rem;
 }
 
 .apply:hover {

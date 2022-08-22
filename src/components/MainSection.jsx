@@ -1,10 +1,11 @@
 import { useState } from "react";
+import Modal from "react-modal";
 import "./MainSection_styles.css";
+import ShoppingBag from "./data/ShoppingBag.json";
+import Costumer from "./data/Costumer.json";
 import Section from "./section/Section";
+import ProductBag from "./product/ProductBag";
 import Product from "./product/Product";
-import ImgProduct1 from "../images/produto 1-checkout.jpg";
-import ImgProduct2 from "../images/produto 2-checkout.jpg";
-import ImgProduct3 from "../images/produto 3-checkout.jpg";
 import IconPg1 from "../images/boleto-icon.png";
 import IconPg2 from "../images/pix-icon.png";
 import IconPg3 from "../images/card-icon.png";
@@ -12,8 +13,12 @@ import IconPg4 from "../images/mercadopago-icon.png";
 import OptionField from "./option-field/OptionField";
 import Summary from "./summary/Summary";
 import Cupon from "./cupon/Cupon";
+import AddressButton from "./address-button/AdressButton";
 import CheckoutButton from "./checout-button/CheckoutButton";
 import CreditCardOptions from "./credit-card-options/CrediCardOptions";
+import CheckoutModal from "./modal/Modal";
+
+Modal.setAppElement("#root");
 
 function CuponFunction() {
   const [discount, setDiscount] = useState("");
@@ -35,47 +40,46 @@ const MainSection = () => {
     <section className="main_section">
       <div className="containerLeft">
         <Section
+          name="SUAS COMPRAS"
+          content={
+            <ProductBag
+              subtotal={`Subtotal: ${ShoppingBag.map((bag) => bag.price)
+                .reduce((acc, price) => price + acc)
+                .toLocaleString("pt-BR", {
+                  style: "currency",
+                  currency: "BRL",
+                })}`}
+              content={ShoppingBag.map((shoppingBag) => {
+                return (
+                  <>
+                    <Product
+                      image={shoppingBag.image}
+                      alt={shoppingBag.description}
+                      quantity={`x ${shoppingBag.quantity}`}
+                      priceOriginal={shoppingBag.priceOriginal}
+                      price={shoppingBag.price}
+                    />
+                  </>
+                );
+              })}
+            />
+          }
+        />
+        <Section
           name="ENDEREÇO"
           content={
             <>
-              <p>Maria Silva e Silva</p>
-              <p>Rua Passárgadas nº 1234</p>
-              <p>Bairro dos Sonhos, Goiânia-GO, CEP 74000-000</p>
-              <p>Contato: (62) 9999 0000</p>
-            </>
-          }
-        />
-
-        <Section
-          name="SUAS COMPRAS"
-          content={
-            <>
-              <div className="productBag">
-                <Product
-                  image={ImgProduct1}
-                  alt="biquini animal print"
-                  quantity="x 1"
-                  priceOriginal={`R$ ${(89.9).toFixed(2)}`}
-                  price={`R$ ${(71.92).toFixed(2)}`}
-                />
-
-                <Product
-                  image={ImgProduct2}
-                  alt="vestido Lisa"
-                  quantity="x 1"
-                  price={`R$ ${(85).toFixed(2)}`}
-                />
-
-                <Product
-                  image={ImgProduct3}
-                  alt="Maiô Tiras"
-                  quantity="x 1"
-                  price={`R$ ${(100).toFixed(2)}`}
-                />
-              </div>
-              <p className="subtotal">
-                Subtotal: {`R$ ${(256.92).toFixed(2)}`}
-              </p>
+              {Costumer.map((costumer) => {
+                return (
+                  <>
+                    <p>{costumer.name}</p>
+                    <p>{`${costumer.street} nº${costumer.number}`}</p>
+                    <p>{`${costumer.district}, CEP ${costumer.cep}, ${costumer.city}-${costumer.state}`}</p>
+                    <p>{`Telefone: ${costumer.phone}`}</p>
+                  </>
+                );
+              })}
+              <AddressButton />
             </>
           }
         />
@@ -154,7 +158,16 @@ const MainSection = () => {
           }
         />
 
-        <Section name="FINALIZAR" content={<CheckoutButton />} />
+        <Section
+          name="FINALIZAR"
+          content={
+            <CheckoutModal
+              modalTitle="Compra finalizada com sucesso!!"
+              openButtonText="FINALIZAR COMPRA"
+              closeButtonText="VOLTAR PARA O INÍCIO"
+            />
+          }
+        />
       </div>
     </section>
   );

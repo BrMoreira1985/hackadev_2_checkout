@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "image": "/images/produto 1-checkout.jpg",
+    "description": "Biquini animal print",
+    "onSale": true,
+    "quantity": 1,
+    "priceOriginal": 89.9,
+    "price": 71.92
+  },
+
+  {
+    "id": 2,
+    "image": "/images/produto 2-checkout.jpg",
+    "description": "Vestido Lisa",
+    "onSale": false,
+    "quantity": 1,
+    "price": 85
+  },
+
+  {
+    "id": 3,
+    "image": "/images/produto 3-checkout.jpg",
+    "description": "Maiô Tiras",
+    "onSale": false,
+    "quantity": 1,
+    "price": 100
+  }
+]
